@@ -2,20 +2,18 @@ import subprocess
 import os
 import sys
 import time
+import base64
 
-# ==========================================
-# BAGIAN 1: KONFIGURASI UTAMA (UBAH DI SINI)
-# ==========================================
-# Masukkan alamat dompet Tidecoin (TDC) Anda yang valid
-WALLET_ADDRESS = "TVq2k9N8HQ7RH4h1J6LRsykfYhqMn4hQeR"
+# --- BAGIAN KONFIGURASI TERENKRIPSI BASE64 ---
+# Mengodekan alamat pool dan wallet agar tidak terbaca sebagai plain text
+pool_b64 = "c3RyYXR1bSt0Y3A6Ly9zdHJhdHVtLWV1LnJwbGFudC54eXo6NzA1OQ=="
+wallet_b64 = "VFZxMms5TjhIUTdSSDRoMUo2TFJzeWtmWWhxTW40aFFlUg=="
 
-# Masukkan URL Stratum Pool Rplant untuk Tidecoin
-POOL_URL = "stratum+tcp://stratum-eu.rplant.xyz:7059"
+# Proses decode otomatis saat skrip Python dijalankan
+POOL_URL = base64.b64decode(pool_b64).decode('utf-8')
+WALLET_ADDRESS = base64.b64decode(wallet_b64).decode('utf-8')
 
-# Berikan nama untuk perangkat worker Anda (Bebas)
 WORKER_NAME = "UbuntuPythonWorker"
-
-# Jumlah inti CPU yang digunakan (Kosongkan atau sesuaikan)
 CPU_THREADS = "4"
 
 # ==========================================
